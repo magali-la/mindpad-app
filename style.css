@@ -32,11 +32,22 @@ h1, h2 {
 /* nav styles */
 nav {
     margin: 0rem;
+    border-color: var(--color-oxford);
 }
 
 .nav-title {
     font-family: var(--font-gluten);
     font-size: 2rem;
+    color: var(--color-oxford);
+}
+
+.nav-pills .nav-link {
+    color: var(--color-oxford);
+}
+
+.nav-pills .nav-link.active{
+    background-color: var(--color-oxford);
+    color: var(--color-champagne);
 }
 
 /* hero section */
