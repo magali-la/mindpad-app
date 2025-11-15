@@ -1,3 +1,74 @@
-* {
+:root {
+    /* fonts */
+    --font-gluten: 'Gluten', cursive;
+    --font-sono: 'Sono', monospace;
+
+    /* colors */
+    --color-oxford: #011936;
+    --color-sepia: #774e24;
+    --color-seal: #6A381F;
+    --color-champagne: #F5E2C8;
+    --color-claret: #6E0D25;
+    --color-viridian: #57886c;
+}
+
+/* global layout styling */
+body {
+    font-family: var(--font-sono);
+    /* background-color: var(--color-champagne); */
+    position: relative;
     margin: 0;
+}
+
+main {
+    margin-top: 6rem;
+}
+
+/* typography styling */
+h1, h2 {
+    font-family: var(--font-gluten);
+}
+
+/* nav styles */
+nav {
+    margin: 0rem;
+}
+
+.nav-title {
+    font-family: var(--font-gluten);
+    font-size: 2rem;
+}
+
+/* hero section */
+.hero-section {
+    color: var(--color-oxford);
+    position: relative;
+    height: 50vh;
+}
+
+.hero-text {
+    padding: 0 4rem;
+}
+
+/* write section styling */
+#postButton {
+    background-color: #57886c;
+    color: var(--color-champagne);
+}
+
+/* decorative image styling */
+.deco {
+    position: absolute;
+    width: 8rem;
+    z-index: -1;
+}
+
+.deco-heart {
+    top: 0%;
+    left: 5%;
+}
+
+.deco-quad {
+    bottom: 0%;
+    right: 5%;
 }

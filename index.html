@@ -6,7 +6,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&family=Sono:wght@200..800&display=swap" rel="stylesheet">
     <!-- bootstrap stylesheet CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- app stylesheet -->
@@ -17,29 +17,42 @@
     <script src="./script.js" defer></script>
     <title>MindPad</title>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example rounded-2" tabindex="0">
     <header>
-        <nav>
-            <li>Home</li>
-            <li>Write</li>
-            <li>Pad</li>
+        <nav id="navbar-example2" class="navbar fixed-top px-3 mb-3 bg-white border-bottom border-oxford">
+            <p class="nav-title">MindPad</p>
+            <ul class="nav nav-pills">
+                <li class="nav-item "><a href="#scrollspyHeading1" class="nav-link active">Home</a></li>
+                <li class="nav-item "><a href="#scrollspyHeading2" class="nav-link ">Write</a></li>
+                <li class="nav-item "><a href="#scrollspyHeading3" class="nav-link">Pad</a></li>
+            </ul>
         </nav>
-        <h1>Welcome to MindPad</h1>
-        <h3>Our mission is to help you with reflective journaling. Have a thought? Write it in your MindPad and reference it later. This digital space is for your</h3>
     </header>
     <main>
+        <section aria-label="hero-section" class="hero-section d-flex col align-items-center justify-content-center">
+            <div class="hero-text text-center">
+                <h1 id="scrollspyHeading1">Welcome to MindPad</h1>
+                <h3 class="fw-normal">Have a thought? Write it in your MindPad and reference it later. This digital space is for your inner voice, ideas, and growth!</h3>
+            </div>
+            <!-- hero section deco images -->
+            <img src="./assets/Mask group 19 grainy-pinkheart.svg" class="deco deco-heart opacity-100" alt="decorative blue quad shape"> 
+            <img src="./assets/Mask group 02 grainy-bluequad.svg" class="deco deco-quad opacity-75" alt="decorative blue quad shape"> 
+        </section>
         <section aria-label="create a PadPost section">
-            <h2>Create a PadPost:</h2>
+            <h2 id="scrollspyHeading2">Create a PadPost:</h2>
             <hr>
-            <form>
+            <form class="">
                 <label for="postTitle">Add a Title</label>
                 <input id="postTitle">
                 <label for="postContent">Add Post Content</label>
-                <textarea id="postContent" placeholder="Need ideas? Talk about your day, a good meal you had, a fun activity you did, etc.">
+                <textarea id="postContent" placeholder="Need ideas? Talk about your day, a good meal you had, a fun activity you did, etc."></textarea>
+                <button id="postButton" class="btn px-5 py-2">Post</button>
             </form>
         </section>
         <section aria-label="your PadPosts section">
-            <h2>Your PadPosts</h2>
+            <h2 id="scrollspyHeading3">Your PadPosts:</h2>
+            <hr>
+            <div id="padPostGrid" class="row"></div>
         </section>
     </main>
 </body>
