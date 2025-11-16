@@ -80,9 +80,17 @@ label, .col-form-label {
     font-size: 18px;
 }
 
+#createForm {
+    background-color: var(--color-champagne);
+}
+
+.list-group-item {
+    color: var(--color-oxford);
+} 
+
 #postButton {
     background-color: var(--color-viridian);
-    color: var(--color-champagne);
+    color: var(--color-floralwhite);
 }
 
 /* decorative image styling */
