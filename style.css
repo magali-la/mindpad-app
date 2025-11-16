@@ -31,6 +31,7 @@ body {
 
 main {
     margin-top: 6rem;
+    color: var(--color-oxford);
 }
 
 /* typography styling */
@@ -71,8 +72,16 @@ nav {
 }
 
 /* write section styling */
+.write-section {
+    position: relative;
+}
+
+label, .col-form-label {
+    font-size: 18px;
+}
+
 #postButton {
-    background-color: #57886c;
+    background-color: var(--color-viridian);
     color: var(--color-champagne);
 }
 
@@ -91,4 +100,15 @@ nav {
 .deco-quad {
     bottom: 0%;
     right: 5%;
+}
+
+.deco-seed {
+    top: 20%;
+    left: 2%;
+    transform: scaleY(-1);
+}
+.deco-grape {
+    bottom: 10%;
+    right: 20%;
+    width: 10rem;
 }

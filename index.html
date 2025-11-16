@@ -35,19 +35,39 @@
                 <h3 class="fw-normal">Have a thought? Write it in your MindPad and reference it later. This digital space is for your inner voice, ideas, and growth!</h3>
             </div>
             <!-- hero section deco images -->
-            <img src="./assets/Mask group 19 grainy-pinkheart.svg" class="deco deco-heart opacity-100" alt="decorative blue quad shape"> 
+            <img src="./assets/Mask group 19 grainy-pinkheart.svg" class="deco deco-heart opacity-100" alt="decorative pink heart shape"> 
             <img src="./assets/Mask group 02 grainy-bluequad.svg" class="deco deco-quad opacity-75" alt="decorative blue quad shape"> 
         </section>
-        <section aria-label="create a PadPost section">
-            <h2 id="scrollspyHeading2">Create a PadPost:</h2>
-            <hr>
-            <form class="">
-                <label for="postTitle">Add a Title</label>
-                <input id="postTitle">
-                <label for="postContent">Add Post Content</label>
-                <textarea id="postContent" placeholder="Need ideas? Talk about your day, a good meal you had, a fun activity you did, etc."></textarea>
-                <button id="postButton" class="btn px-5 py-2">Post</button>
-            </form>
+        <section aria-label="write a PadPost section" class="write-section d-flex flex-column gap-4">
+            <h2 id="scrollspyHeading2" class="px-5">Write a PadPost:</h2>
+            <div class="formAndIdeas d-flex flex-row justify-content-center gap-5 px-5 pb-5">
+                <form id="createForm" class="d-flex flex-column w-50">
+                    <div class="row mb-3">
+                        <label for="createTitle" class="col-3 col-form-label">Add a Title</label>
+                        <div class="col-9">
+                            <input type="text" id="createTitle" class="form-control" placeholder="Write a title for your PadPost">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-3 mb-4">
+                        <label for="createContent">Add Post Content</label>
+                        <textarea id="createContent" class="form-control" placeholder="Write your post content here" rows="8"></textarea>
+                    </div>
+                    <button type="submit" id="postButton" class="btn btn-outline-success px-5 py-2 fs-5 w-50 align-self-center">Post</button>
+                </form>
+                <div class="d-flex flex-column gap-3">
+                    <h3>Need Ideas?</h3>
+                    <ul id="ideasList" class="list-group list-group-flush">
+                        <li class="list-group-item">My day was...</li>
+                        <li class="list-group-item">I recently tried (insert food) and...</li>
+                        <li class="list-group-item">One activity I did today was...</li>
+                        <li class="list-group-item">My favorite words are...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- write section deco images -->
+            <img src="./assets/Mask group 09 grainy-greenseed.svg" class="deco deco-seed opacity-100" alt="decorative green seed shape"> 
+            <img src="./assets/Mask group 16 grainy-yellowgrape.svg" class="deco deco-grape opacity-75" alt="decorative orange grape shape">
         </section>
         <section aria-label="your PadPosts section">
             <h2 id="scrollspyHeading3">Your PadPosts:</h2>
