@@ -8,14 +8,23 @@
     --color-sepia: #774e24;
     --color-seal: #6A381F;
     --color-champagne: #F5E2C8;
+    --color-floralwhite: #FEFCFA;
     --color-claret: #6E0D25;
     --color-viridian: #57886c;
+
+    /* deco colors */
+    --color-pacific: #1099A8;
+    --color-jungle: #08AF6F;
+    --color-rose: #BE5776;
+    --color-lilac: #8352C3; 
+    --color-honey: #DBAE53;
+
 }
 
 /* global layout styling */
 body {
     font-family: var(--font-sono);
-    /* background-color: var(--color-champagne); */
+    background-color: var(--color-floralwhite);
     position: relative;
     margin: 0;
 }
