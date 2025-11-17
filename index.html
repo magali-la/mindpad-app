@@ -41,19 +41,28 @@
         <section aria-label="write a PadPost section" class="write-section d-flex flex-column gap-4">
             <h2 id="scrollspyHeading2" class="px-5">Write a PadPost:</h2>
             <div class="formAndIdeas d-flex flex-row justify-content-center gap-5 px-5 pb-5">
-                <form id="createForm" class="d-flex flex-column w-50 p-3 rounded-4">
+                <!-- Create a post Form -->
+                <form id="createForm" class="needs-validation d-flex flex-column w-50 p-3 rounded-4" novalidate>
                     <div class="row mb-3">
                         <label for="createTitle" class="col-3 col-form-label">Add a Title</label>
                         <div class="col-9">
-                            <input type="text" id="createTitle" class="form-control" placeholder="Write a title for your PadPost">
+                            <input type="text" id="createTitle" class="form-control" placeholder="Write a title for your PadPost" minlength="1" required>
+                            <!-- title error -->
+                            <div class="invalid-feedback">
+                                Please add a title to your PadPost!
+                            </div>
                         </div>
                     </div>
                     <div class="d-flex flex-column gap-3 mb-4">
                         <label for="createContent">Add Post Content</label>
-                        <textarea id="createContent" class="form-control" placeholder="Write your post content here" rows="8"></textarea>
+                        <textarea id="createContent" class="form-control" placeholder="Write your post content here" rows="8" minlength="1" required></textarea>
+                        <div class="invalid-feedback">
+                            Please add content to your PadPost!
+                        </div>
                     </div>
                     <button type="submit" id="postButton" class="btn btn-outline-success px-5 py-2 fs-5 w-50 align-self-center">Post</button>
                 </form>
+                <!-- Post Ideas Section -->
                 <div class="d-flex flex-column gap-3">
                     <h3>Need Ideas?</h3>
                     <ul id="ideasList" class="list-group list-group-flush d-flex flex-column gap-2">
