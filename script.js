@@ -7,7 +7,7 @@ let createContentInput = document.getElementById("createContent");
 let padPosts = [];
 
 window.addEventListener("load", () => {
-    padPosts = JSON.parse(localStorage.getItem('posts', JSON.stringify(padPosts)));
+    padPosts = JSON.parse(localStorage.getItem('posts')) || [];
     console.log("PadPosts retrieved from local storage", padPosts);
 })
 
