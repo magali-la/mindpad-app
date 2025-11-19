@@ -93,6 +93,17 @@ label, .col-form-label {
     color: var(--color-floralwhite);
 }
 
+/* padPosts section */
+#templatePost {
+    background-color: var(--color-lilac);
+    color: var(--color-champagne);
+}
+
+.editButton {
+    color: var(--color-oxford);
+
+}
+
 /* decorative image styling */
 .deco {
     position: absolute;
