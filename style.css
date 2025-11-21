@@ -94,7 +94,7 @@ label, .col-form-label {
 }
 
 /* padPosts section */
-#templatePost {
+.templatePost {
     background-color: var(--color-lilac);
     color: var(--color-champagne);
 }
