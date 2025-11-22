@@ -42,6 +42,23 @@ createPostForm.addEventListener("submit", (event) => {
     }
 }, false);
 
+// event listener for edit button
+padPostGrid.addEventListener("click", (event) => {
+    console.log("grid clicked somewhere");
+
+    if (event.target.closest('.editButton')){
+        console.log("edit button clicked");
+        // find the closest post based on its custom data attribute
+        let postContainer = event.target.closest('[data-post-id]');
+        let postId = postContainer.dataset.postId;
+        let editButton = postContainer.querySelector('.editButton');
+
+
+        
+    }
+})
+
+
 // function to save posts and update local storage
 function savePost() {
     // set an object with the content
@@ -64,6 +81,9 @@ function savePost() {
 
     // remove d-none class from clone to show it on the page
     clonedPost.classList.remove('d-none');
+
+    // set a unique id for the post
+    clonedPost.setAttribute('data-post-id', newPost.id);
 
     // define variables for the classes on the template
     let padPostDate = clonedPost.querySelector('.padPostDate');
@@ -98,6 +118,8 @@ function displayPost(postObj) {
 
     // remove d-none class from clone to show it on the page
     clonedPost.classList.remove('d-none');
+    // set a unique id for the post
+    clonedPost.setAttribute('data-post-id', postObj.id);
 
     // define variables for the classes on the template
     let padPostDate = clonedPost.querySelector('.padPostDate');
@@ -121,4 +143,9 @@ function displayPost(postObj) {
 
     // prepend the grid with the clonedtemplate to display it
     padPostGrid.prepend(clonedPost);
+}
+
+// function to update posts
+function updatePost(){
+
 }
