@@ -10,7 +10,10 @@ let padPosts = [];
 window.addEventListener("load", () => {
     padPosts = JSON.parse(localStorage.getItem('posts')) || [];
     console.log("PadPosts retrieved from local storage", padPosts);
-})
+
+    // map through the pasPosts array if it isn't empty
+    padPosts.map(post => displayPost(post));
+});
 
 // form validity
 createPostForm.addEventListener("submit", (event) => {
@@ -81,6 +84,40 @@ function savePost() {
     // set the value of the title input and content input as the saved post info
     padPostTitle.value = newPost.title;
     padPostContent.value = newPost.content;
+
+    // prepend the grid with the clonedtemplate to display it
+    padPostGrid.prepend(clonedPost);
+}
+
+// function to display posts saved in local storage
+function displayPost(postObj) {
+
+    // now clone the template and add it to the grid by appending the list
+    let template = document.getElementById("templatePost");
+    let clonedPost = template.cloneNode(true);
+
+    // remove d-none class from clone to show it on the page
+    clonedPost.classList.remove('d-none');
+
+    // define variables for the classes on the template
+    let padPostDate = clonedPost.querySelector('.padPostDate');
+    let padPostTitle = clonedPost.querySelector('.padPostTitle');
+    let padPostContent = clonedPost.querySelector('.padPostContent');
+
+    // change the date object to something more readable
+    let postDate = new Date(postObj.id);
+    // create a weekday Month and day
+    let weekday = postDate.toLocaleDateString('en-US', {weekday: 'short'});
+    let month = postDate.toLocaleDateString('en-US', {month: 'short', day: 'numeric'})
+    let time = postDate.toLocaleTimeString('en-US', {hour:'numeric', minute: '2-digit', hour12: true});
+    // format the date
+    let formattedDate = `${weekday} ${month} @ ${time}`;
+    console.log(formattedDate);
+    padPostDate.innerText = formattedDate;
+
+    // set the value of the title input and content input as the saved post info
+    padPostTitle.value = postObj.title;
+    padPostContent.value = postObj.content;
 
     // prepend the grid with the clonedtemplate to display it
     padPostGrid.prepend(clonedPost);
