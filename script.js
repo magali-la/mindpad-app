@@ -68,6 +68,8 @@ padPostGrid.addEventListener("click", (event) => {
 
         } else {
         // set save mode view, update the post in padPosts
+            // update the post in local storage once it's clicked again
+            updatePost(postId, titleInput.value, contentInput.value);
             // make both inputs readonly again
             titleInput.readOnly = true;
             contentInput.readOnly = true;
@@ -166,6 +168,17 @@ function displayPost(postObj) {
 }
 
 // function to update posts
-function updatePost(){
+function updatePost(postId, newTitle, newContent){
+    // find the post being edited in the padPosts array by its id
+    let originalPost = padPosts.find(post => post.id == postId);
+    console.log("Original post found", originalPost)
 
+    // update the post title and post content values
+    originalPost.title = newTitle;
+    originalPost.content = newContent;
+    console.log("Original post has been updated:", originalPost)
+
+    // set local storage for that element again
+    localStorage.setItem('posts', JSON.stringify(padPosts));
+    console.log('Post updated in local storage!');
 }
