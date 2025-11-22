@@ -52,9 +52,31 @@ padPostGrid.addEventListener("click", (event) => {
         let postContainer = event.target.closest('[data-post-id]');
         let postId = postContainer.dataset.postId;
         let editButton = postContainer.querySelector('.editButton');
+        let titleInput = postContainer.querySelector('.padPostTitle');
+        let contentInput = postContainer.querySelector('.padPostContent');
 
+        // set edit mode view
+        if (titleInput.readOnly == true){
+            // make both inputs editable
+            titleInput.readOnly = false;
+            contentInput.readOnly = false;
 
-        
+            // change the edit button to a save button
+            editButton.innerHTML = `<i class="bi bi-floppy fw-bolder"></i> Save`;
+            editButton.classList.remove('btn-warning');
+            editButton.classList.add('btn-info');
+
+        } else {
+        // set save mode view, update the post in padPosts
+            // make both inputs readonly again
+            titleInput.readOnly = true;
+            contentInput.readOnly = true;
+
+            // change the save button to an edit button
+            editButton.innerHTML = `<i class="bi bi-pencil fw-bolder"></i> Edit`;
+            editButton.classList.remove('btn-info');
+            editButton.classList.add('btn-warning');
+        }
     }
 })
 
@@ -98,7 +120,6 @@ function savePost() {
     let time = postDate.toLocaleTimeString('en-US', {hour:'numeric', minute: '2-digit', hour12: true});
     // format the date
     let formattedDate = `${weekday} ${month} @ ${time}`;
-    console.log(formattedDate);
     padPostDate.innerText = formattedDate;
 
     // set the value of the title input and content input as the saved post info
@@ -134,7 +155,6 @@ function displayPost(postObj) {
     let time = postDate.toLocaleTimeString('en-US', {hour:'numeric', minute: '2-digit', hour12: true});
     // format the date
     let formattedDate = `${weekday} ${month} @ ${time}`;
-    console.log(formattedDate);
     padPostDate.innerText = formattedDate;
 
     // set the value of the title input and content input as the saved post info
