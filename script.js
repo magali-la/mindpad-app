@@ -59,6 +59,9 @@ function savePost() {
     let template = document.getElementById("templatePost");
     let clonedPost = template.cloneNode(true);
 
+    // remove d-none class from clone to show it on the page
+    clonedPost.classList.remove('d-none');
+
     // define variables for the classes on the template
     let padPostDate = clonedPost.querySelector('.padPostDate');
     let padPostTitle = clonedPost.querySelector('.padPostTitle');
